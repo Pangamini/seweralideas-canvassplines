@@ -195,6 +195,8 @@ namespace SeweralIdeas.CanvasSplines
             float evenSpacing = _intervalLength / count;
             float sizePixels = _spline.NormalizedScalarToRectLocal(_particleSize);
             Transform containerTransform = _spline.RectTransform;
+            float splineLength = _spline.GetSplineLength();
+            float startDist = _fillStart * splineLength;
 
             // Wrap offset to interval to avoid floating point drift
             float wrappedOffset = _offset % _intervalLength;
@@ -207,8 +209,8 @@ namespace SeweralIdeas.CanvasSplines
                 // Progress within the fill interval (0-1 distance fraction)
                 float fillFrac = dist / _intervalLength;
 
-                // Convert to normalized spline position
-                float splineT = _spline.DistanceToT(dist);
+                // Convert to normalized spline position, offset by fill start
+                float splineT = _spline.DistanceToT(startDist + dist);
                 
                 Vector2 rectLocal = _spline.EvaluatePosition(splineT);
                 Vector2 tangentLocal = EvaluateTangentSafe(splineT);

@@ -1,0 +1,10 @@
+{
+  "name": "com.seweralideas.canvassplines",
+  "version": "0.1.0",
+  "displayName": "Canvas Splines",
+  "description": "Canvas Splines",
+  "author": {
+    "name": "Boleslav Horak",
+    "email": "seweralideas@gmail.com"
+  }
+}

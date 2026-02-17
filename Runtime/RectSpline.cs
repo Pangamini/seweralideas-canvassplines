@@ -21,8 +21,8 @@ namespace SeweralIdeas.CanvasSplines
         {
             get
             {
-                if (_rectTransform == null)
-                    _rectTransform = (RectTransform)transform;
+                if(_rectTransform == null)
+                    _rectTransform = GetComponent<RectTransform>();
                 return _rectTransform;
             }
         }

@@ -288,11 +288,6 @@ namespace SeweralIdeas.CanvasSplines
                 Vector3 curr = rt.TransformPoint(currLocal);
 
                 Gizmos.DrawLine(prev, curr);
-
-                Vector2 tangentLocal = EvaluateTangent(t);
-                Vector3 tangent = rt.TransformDirection(new Vector3(tangentLocal.x, tangentLocal.y, 0f)).normalized;
-                Gizmos.DrawLine(curr, curr + tangent * 10f);
-
                 prev = curr;
             }
         }
